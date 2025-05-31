@@ -43,6 +43,7 @@ dependencies:
   date_format: ^2.0.5
   timer_builder: ^2.0.0
   http: ^1.4.0
+  geocoding: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -10,13 +10,13 @@ final Map<String, String> addressAtoC = {
 };
 
 final Map<String, String> addressCtoA = {
-  "Cheonan Campus": "충남 천안시 동남구 호서대길 12 호서대학교천안캠퍼스",
-  "Cheonan Terminal": "충청남도 천안시 동남구 신부동 811",
-  "Cheonan Station": "충남 천안시 동남구 버들로 16",
-  "Chungmu Hospital": "충청남도 천안시 서북구 쌍용동 538-16",
-  "Ssangyong 3-dong": "충청남도 천안시 서북구 쌍용동 2031",
+  "Asan Campus": "충청남도 아산시 배방읍 호서로79번길 20 호서대학교",
   "Cheonan-Asan Station": "충청남도 아산시 배방읍 장재리 316-7",
-  "Asan Campus": "충청남도 아산시 배방읍 호서로79번길 20 호서대학교"
+  "Ssangyong 3-dong": "충청남도 천안시 서북구 쌍용동 2031",
+  "Chungmu Hospital": "충청남도 천안시 서북구 쌍용동 538-16",
+  "Cheonan Station": "충남 천안시 동남구 버들로 16",
+  "Cheonan Terminal": "충청남도 천안시 동남구 신부동 811",
+  "Cheonan Campus": "충남 천안시 동남구 호서대길 12 호서대학교천안캠퍼스"
 };
 
 String? getAddress(String str, int dir) {

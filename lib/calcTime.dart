@@ -83,11 +83,11 @@ Future<String?> getNextTime({
   final startXY = await getLocation(address: getAddress(stopName, dir));
   final stopNum = schedules.first.stops.keys.toList().indexOf(stopName);
 
-  var time = await getArriveBus(stopNum: stopNum, start: schoolXY, dest: startXY);
+  var time = await getArriveDest(dir:dir, startNum: 0, destNum: stopNum, start: schoolXY, dest: startXY);
   DateTime apiTime = now.add(Duration(minutes: time.round()));
   Duration? timediff = dbTime?.difference(apiTime);
 
-  if(timediff!.inMinutes > 20){
+  if(timediff!.inMinutes > 10){
     final str = DateFormat.Hm().format(apiTime);
     return str;
   } else{

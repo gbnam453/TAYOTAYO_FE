@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:date_format/date_format.dart';
+import 'package:tayotayo_fe/restaurantSearch.dart';
 import 'package:timer_builder/timer_builder.dart';
 import 'weather.dart'; // 날씨 위젯 import
 import 'busstop.dart';
-import 'food.dart';
 
 void main() => runApp(MyApp());
 
@@ -60,7 +60,7 @@ class MainScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        CupertinoPageRoute(builder: (_) => foodPage()),
+                        CupertinoPageRoute(builder: (_) => RestaurantSearchPage()),
                       );
                     },
                   ),
