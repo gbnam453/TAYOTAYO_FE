@@ -1,109 +1,107 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'busSchedule.dart';
-import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
-import 'getTrafficTime.dart';
-import 'calcTime.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:date_format/date_format.dart';
+import 'package:timer_builder/timer_builder.dart';
+import 'weather.dart'; // 날씨 위젯 import
+import 'busstop.dart';
+import 'food.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return CupertinoApp(
+      home: MainScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  var startNum = 1;
-  var startStop = 'Cheonan-Asan Station';
-  var destNum = 5;
-  var destStop = 'Cheonan Terminal';
-
-  late Future<busScheduleDB> futureSchedule;
-
-  Future<busScheduleDB> loadShuttleSchedule() async {
-    final jsonStr = await rootBundle.loadString('assets/ShuttleScheduleDB.json');
-    final jsonMap = jsonDecode(jsonStr);
-    return busScheduleDB.fromJson(jsonMap);
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getBusTime();
-  }
-
-  void getBusTime(){
-    futureSchedule = loadShuttleSchedule();
-    String? arriveTime;
-
-    loadShuttleSchedule().then((db) async {
-      final int dir = startNum < destNum ? 0 : 1;
-      if(startNum == 0 || startNum == 6){ // No Api
-        print("no api");
-        arriveTime = getNextBusTime(stopName: startStop,schedules: getSchedules(dir: dir, busSche: db));
-      }
-      else{
-        arriveTime = await getNextTime(stopName: startStop,schedules: getSchedules(dir: dir, busSche: db));
-      }
-      print("arriveTime:$arriveTime");
-
-      Coordinates startXY = await getLocation(address: getAddress(startStop, dir));
-      Coordinates destXY = await getLocation(address: getAddress(destStop, dir));
-
-      final busTime = await getArriveDest(dir: dir, startNum : startNum, destNum: destNum, start: startXY, dest: destXY);
-      print("busTime$busTime");
-
-      DateFormat format = DateFormat.Hm();
-      DateTime time = format.parse(arriveTime!);
-      DateTime newTime = time.add(Duration(minutes: busTime.round()));
-      String result = DateFormat.Hm().format(newTime);
-
-      print("finalTime: $result");
-    });
-  }
-
+class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme
-              .of(context)
-              .colorScheme
-              .inversePrimary,
-          title: Text(widget.title),
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.white,
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // 상단 시간 + 날씨
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40.0),
+              child: Column(
+                children: [
+                  TimerBuilder.periodic(
+                    const Duration(seconds: 1),
+                    builder: (context) {
+                      return Text(
+                        formatDate(DateTime.now(), [hh, ':', nn, ':', ss, ' ', am]),
+                        style: const TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(height: 30),
+                  WeatherWidget(), // ← 여기서 날씨 위젯 사용
+                ],
+              ),
+            ),
+
+            // 버튼 2개 가로 배치
+            Center(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildIconButton(
+                    icon: Icons.restaurant,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(builder: (_) => foodPage()),
+                      );
+                    },
+                  ),
+                  SizedBox(width: 40),
+                  _buildIconButton(
+                    icon: Icons.directions_bus,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(builder: (_) => BusStopPage()),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text('You have pushed the button this many times:'),
-            ],
+      ),
+    );
+  }
+
+  Widget _buildIconButton({required IconData icon, required VoidCallback onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 160,
+        height: 160,
+        decoration: BoxDecoration(
+          border: Border.all(color: CupertinoColors.black),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Center(
+          child: Icon(
+            icon,
+            size: 72,
+            color: CupertinoColors.black,
           ),
-        )
+        ),
+      ),
     );
   }
 }
+

@@ -13,19 +13,23 @@ Future getArriveDest({
 
   StringBuffer buffer = StringBuffer();
   Coordinates coordinates;
-  final Map<String, String> way = dir == 0 ? addressCtoA : addressAtoC;
+  final Map<String, String> way = dir == 0 ? addressAtoC : addressCtoA;
 
   if(dir == 1){
     startNum = startNum % 6;
     destNum = destNum % 6;
   }
-  for (int i = startNum; i < destNum; i++) {
-    // print(way.keys.elementAt(i));
-    coordinates = await getLocation(address:way.values.elementAt(i));
-    String str = '${coordinates.x},${coordinates.y}';
-    buffer.write('$str');
-    if (i < destNum - 1) {
-      buffer.write('|');
+  print(startNum);
+  print(destNum);
+  if((startNum - destNum) >= 2) {
+    for (int i = startNum; i < destNum; i++) {
+      print("test:${way.keys.elementAt(i)}");
+      coordinates = await getLocation(address: way.values.elementAt(i));
+      String str = '${coordinates.x},${coordinates.y}';
+      buffer.write('$str');
+      if (i < destNum - 1) {
+        buffer.write('|');
+      }
     }
   }
   final waypoint = buffer.toString();
@@ -34,7 +38,6 @@ Future getArriveDest({
   final dio = Dio();
   final response = await dio.get(
     'https://maps.apigw.ntruss.com/map-direction-15/v1/driving',
-    // 'https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving',
     queryParameters: {
       'start': '${start.x},${start.y}',  // 경도, 위도
       'goal': '${dest.x},${dest.y}', // 목적지 경도, 위도
@@ -50,6 +53,11 @@ Future getArriveDest({
   if (response.statusCode == 200) {
     final json = jsonDecode(response.toString());
 
+    // Logger logger = Logger();
+    // final encoder = JsonEncoder.withIndent('  ');
+    // final prettyJson = encoder.convert(json);
+    // logger.d(prettyJson);
+
     final route = json['route'];
     final trafast = route['trafast'];
     final summary = trafast[0]['summary'];
@@ -64,10 +72,6 @@ Future getArriveDest({
     }).reduce((a, b) => a + b);
     print(totalCongestion);
     arrivalTime = arrivalTime / 60000.0;
-    // final now = DateTime.now();
-    // DateTime apiTime = now.add(Duration(minutes: arrivalTime.round()));
-    // final str = DateFormat.Hm().format(apiTime);
-    // return str;
     return arrivalTime;
   } else {
     print('에러: ${response.statusCode}');
@@ -99,7 +103,6 @@ Future getArriveBus({
   final dio = Dio();
   final response = await dio.get(
     'https://maps.apigw.ntruss.com/map-direction-15/v1/driving',
-    // 'https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving',
     queryParameters: {
       'start': '${start.x},${start.y}',  // 경도, 위도
       'goal': '${dest.x},${dest.y}', // 목적지 경도, 위도
@@ -115,10 +118,10 @@ Future getArriveBus({
   if (response.statusCode == 200) {
     final json = jsonDecode(response.toString());
 
-    Logger logger = Logger();
-    final encoder = JsonEncoder.withIndent('  ');
-    final prettyJson = encoder.convert(json);
-    logger.d(prettyJson);
+    // Logger logger = Logger();
+    // final encoder = JsonEncoder.withIndent('  ');
+    // final prettyJson = encoder.convert(json);
+    // logger.d(prettyJson);
 
     final route = json['route'];
     final trafast = route['trafast'];
@@ -135,7 +138,7 @@ Future getArriveBus({
     }).reduce((a, b) => a + b);
     print(totalCongestion);
 
-    return arrivalTime / 60000;
+    return arrivalTime / 60000.0;
   } else {
     print('에러: ${response.statusCode}');
     return response.statusCode;
