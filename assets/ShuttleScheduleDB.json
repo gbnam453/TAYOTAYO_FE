@@ -1,0 +1,924 @@
+{
+  "cheonan_to_asan": [
+    {
+      "Cheonan Campus": "08:00",
+      "Cheonan Terminal": "08:08",
+      "Cheonan Station": "08:13",
+      "Chungmu Hospital": "08:18",
+      "Ssangyong 3-dong": "08:23",
+      "Cheonan-Asan Station": "08:33",
+      "Asan Campus": "08:48"
+    },
+    {
+      "Cheonan Campus": "08:10",
+      "Cheonan Terminal": "08:23",
+      "Cheonan Station": "08:28",
+      "Chungmu Hospital": "08:33",
+      "Ssangyong 3-dong": "08:43",
+      "Cheonan-Asan Station": "08:48",
+      "Asan Campus": "08:58"
+    },
+    {
+      "Cheonan Campus": "08:20",
+      "Cheonan Terminal": "08:33",
+      "Cheonan Station": "08:38",
+      "Chungmu Hospital": "08:43",
+      "Ssangyong 3-dong": "08:53",
+      "Cheonan-Asan Station": "08:58",
+      "Asan Campus": "09:08"
+    },
+    {
+      "Cheonan Campus": "08:30",
+      "Cheonan Terminal": "08:38",
+      "Cheonan Station": "08:43",
+      "Chungmu Hospital": "08:48",
+      "Ssangyong 3-dong": "08:53",
+      "Cheonan-Asan Station": "09:03",
+      "Asan Campus": "09:18"
+    },
+    {
+      "Cheonan Campus": "08:45",
+      "Cheonan Terminal": "08:53",
+      "Cheonan Station": "08:58",
+      "Chungmu Hospital": "09:03",
+      "Ssangyong 3-dong": "09:08",
+      "Cheonan-Asan Station": "09:18",
+      "Asan Campus": "09:33"
+    },
+    {
+      "Cheonan Campus": "09:00",
+      "Cheonan Terminal": "09:08",
+      "Cheonan Station": "09:13",
+      "Chungmu Hospital": "09:18",
+      "Ssangyong 3-dong": "09:23",
+      "Cheonan-Asan Station": "09:33",
+      "Asan Campus": "09:48"
+    },
+    {
+      "Cheonan Campus": "09:15",
+      "Cheonan Terminal": "09:23",
+      "Cheonan Station": "09:28",
+      "Chungmu Hospital": "09:33",
+      "Ssangyong 3-dong": "09:38",
+      "Cheonan-Asan Station": "09:48",
+      "Asan Campus": "10:03"
+    },
+    {
+      "Cheonan Campus": "09:30",
+      "Cheonan Terminal": "09:38",
+      "Cheonan Station": "09:43",
+      "Chungmu Hospital": "09:48",
+      "Ssangyong 3-dong": "09:53",
+      "Cheonan-Asan Station": "10:03",
+      "Asan Campus": "10:18"
+    },
+    {
+      "Cheonan Campus": "09:45",
+      "Cheonan Terminal": "09:53",
+      "Cheonan Station": "09:58",
+      "Chungmu Hospital": "10:03",
+      "Ssangyong 3-dong": "10:08",
+      "Cheonan-Asan Station": "10:18",
+      "Asan Campus": "10:33"
+    },
+    {
+      "Cheonan Campus": "10:00",
+      "Cheonan Terminal": "10:08",
+      "Cheonan Station": "10:13",
+      "Chungmu Hospital": "10:18",
+      "Ssangyong 3-dong": "10:23",
+      "Cheonan-Asan Station": "10:33",
+      "Asan Campus": "10:48"
+    },
+    {
+      "Cheonan Campus": "10:15",
+      "Cheonan Terminal": "10:23",
+      "Cheonan Station": "10:28",
+      "Chungmu Hospital": "10:33",
+      "Ssangyong 3-dong": "10:38",
+      "Cheonan-Asan Station": "10:48",
+      "Asan Campus": "11:03"
+    },
+    {
+      "Cheonan Campus": "10:30",
+      "Cheonan Terminal": "10:38",
+      "Cheonan Station": "10:43",
+      "Chungmu Hospital": "10:48",
+      "Ssangyong 3-dong": "10:53",
+      "Cheonan-Asan Station": "11:03",
+      "Asan Campus": "11:18"
+    },
+    {
+      "Cheonan Campus": "10:45",
+      "Cheonan Terminal": "10:53",
+      "Cheonan Station": "10:58",
+      "Chungmu Hospital": "11:03",
+      "Ssangyong 3-dong": "11:08",
+      "Cheonan-Asan Station": "11:18",
+      "Asan Campus": "11:33"
+    },
+    {
+      "Cheonan Campus": "11:00",
+      "Cheonan Terminal": "11:08",
+      "Cheonan Station": "11:13",
+      "Chungmu Hospital": "11:18",
+      "Ssangyong 3-dong": "11:23",
+      "Cheonan-Asan Station": "11:33",
+      "Asan Campus": "11:48"
+    },
+    {
+      "Cheonan Campus": "11:15",
+      "Cheonan Terminal": "11:23",
+      "Cheonan Station": "11:28",
+      "Chungmu Hospital": "11:33",
+      "Ssangyong 3-dong": "11:38",
+      "Cheonan-Asan Station": "11:48",
+      "Asan Campus": "12:03"
+    },
+    {
+      "Cheonan Campus": "11:30",
+      "Cheonan Terminal": "11:38",
+      "Cheonan Station": "11:43",
+      "Chungmu Hospital": "11:48",
+      "Ssangyong 3-dong": "11:53",
+      "Cheonan-Asan Station": "12:03",
+      "Asan Campus": "12:18"
+    },
+    {
+      "Cheonan Campus": "11:45",
+      "Cheonan Terminal": "11:53",
+      "Cheonan Station": "11:58",
+      "Chungmu Hospital": "12:03",
+      "Ssangyong 3-dong": "12:08",
+      "Cheonan-Asan Station": "12:18",
+      "Asan Campus": "12:33"
+    },
+    {
+      "Cheonan Campus": "12:00",
+      "Cheonan Terminal": "12:08",
+      "Cheonan Station": "12:13",
+      "Chungmu Hospital": "12:18",
+      "Ssangyong 3-dong": "12:23",
+      "Cheonan-Asan Station": "12:33",
+      "Asan Campus": "12:48"
+    },
+    {
+      "Cheonan Campus": "12:20",
+      "Cheonan Terminal": "12:28",
+      "Cheonan Station": "12:33",
+      "Chungmu Hospital": "12:38",
+      "Ssangyong 3-dong": "12:43",
+      "Cheonan-Asan Station": "12:53",
+      "Asan Campus": "13:08"
+    },
+    {
+      "Cheonan Campus": "12:40",
+      "Cheonan Terminal": "12:48",
+      "Cheonan Station": "12:53",
+      "Chungmu Hospital": "12:58",
+      "Ssangyong 3-dong": "13:03",
+      "Cheonan-Asan Station": "13:13",
+      "Asan Campus": "13:28"
+    },
+    {
+      "Cheonan Campus": "13:00",
+      "Cheonan Terminal": "13:08",
+      "Cheonan Station": "13:13",
+      "Chungmu Hospital": "13:18",
+      "Ssangyong 3-dong": "13:23",
+      "Cheonan-Asan Station": "13:33",
+      "Asan Campus": "13:48"
+    },
+    {
+      "Cheonan Campus": "13:20",
+      "Cheonan Terminal": "13:28",
+      "Cheonan Station": "13:33",
+      "Chungmu Hospital": "13:38",
+      "Ssangyong 3-dong": "13:43",
+      "Cheonan-Asan Station": "13:53",
+      "Asan Campus": "14:08"
+    },
+    {
+      "Cheonan Campus": "13:40",
+      "Cheonan Terminal": "13:48",
+      "Cheonan Station": "13:53",
+      "Chungmu Hospital": "13:58",
+      "Ssangyong 3-dong": "14:03",
+      "Cheonan-Asan Station": "14:13",
+      "Asan Campus": "14:28"
+    },
+    {
+      "Cheonan Campus": "14:00",
+      "Cheonan Terminal": "14:08",
+      "Cheonan Station": "14:13",
+      "Chungmu Hospital": "14:18",
+      "Ssangyong 3-dong": "14:23",
+      "Cheonan-Asan Station": "14:33",
+      "Asan Campus": "14:48"
+    },
+    {
+      "Cheonan Campus": "14:20",
+      "Cheonan Terminal": "14:28",
+      "Cheonan Station": "14:33",
+      "Chungmu Hospital": "14:38",
+      "Ssangyong 3-dong": "14:43",
+      "Cheonan-Asan Station": "14:53",
+      "Asan Campus": "15:08"
+    },
+    {
+      "Cheonan Campus": "14:40",
+      "Cheonan Terminal": "14:48",
+      "Cheonan Station": "14:53",
+      "Chungmu Hospital": "14:58",
+      "Ssangyong 3-dong": "15:03",
+      "Cheonan-Asan Station": "15:13",
+      "Asan Campus": "15:28"
+    },
+    {
+      "Cheonan Campus": "15:00",
+      "Cheonan Terminal": "15:08",
+      "Cheonan Station": "15:13",
+      "Chungmu Hospital": "15:18",
+      "Ssangyong 3-dong": "15:23",
+      "Cheonan-Asan Station": "15:33",
+      "Asan Campus": "15:48"
+    },
+    {
+      "Cheonan Campus": "15:15",
+      "Cheonan Terminal": "15:23",
+      "Cheonan Station": "15:28",
+      "Chungmu Hospital": "15:33",
+      "Ssangyong 3-dong": "15:38",
+      "Cheonan-Asan Station": "15:48",
+      "Asan Campus": "16:03"
+    },
+    {
+      "Cheonan Campus": "15:30",
+      "Cheonan Terminal": "15:38",
+      "Cheonan Station": "15:43",
+      "Chungmu Hospital": "15:48",
+      "Ssangyong 3-dong": "15:53",
+      "Cheonan-Asan Station": "16:03",
+      "Asan Campus": "16:18"
+    },
+    {
+      "Cheonan Campus": "15:45",
+      "Cheonan Terminal": "15:53",
+      "Cheonan Station": "15:58",
+      "Chungmu Hospital": "16:08",
+      "Ssangyong 3-dong": "16:08",
+      "Cheonan-Asan Station": "16:18",
+      "Asan Campus": "16:33"
+    },
+    {
+      "Cheonan Campus": "16:00",
+      "Cheonan Terminal": "16:08",
+      "Cheonan Station": "16:13",
+      "Chungmu Hospital": "16:18",
+      "Ssangyong 3-dong": "16:23",
+      "Cheonan-Asan Station": "16:33",
+      "Asan Campus": "16:48"
+    },
+    {
+      "Cheonan Campus": "16:15",
+      "Cheonan Terminal": "16:23",
+      "Cheonan Station": "16:28",
+      "Chungmu Hospital": "16:33",
+      "Ssangyong 3-dong": "16:38",
+      "Cheonan-Asan Station": "16:48",
+      "Asan Campus": "17:03"
+    },
+    {
+      "Cheonan Campus": "16:30",
+      "Cheonan Terminal": "16:38",
+      "Cheonan Station": "16:43",
+      "Chungmu Hospital": "16:48",
+      "Ssangyong 3-dong": "16:53",
+      "Cheonan-Asan Station": "17:03",
+      "Asan Campus": "17:18"
+    },
+    {
+      "Cheonan Campus": "16:45",
+      "Cheonan Terminal": "16:53",
+      "Cheonan Station": "16:58",
+      "Chungmu Hospital": "17:03",
+      "Ssangyong 3-dong": "17:08",
+      "Cheonan-Asan Station": "17:18",
+      "Asan Campus": "17:33"
+    },
+    {
+      "Cheonan Campus": "16:55",
+      "Cheonan Terminal": "17:03",
+      "Cheonan Station": "17:08",
+      "Chungmu Hospital": "17:13",
+      "Ssangyong 3-dong": "17:18",
+      "Cheonan-Asan Station": "17:28",
+      "Asan Campus": "17:43"
+    },
+    {
+      "Cheonan Campus": "17:05",
+      "Cheonan Terminal": "17:13",
+      "Cheonan Station": "17:18",
+      "Chungmu Hospital": "17:23",
+      "Ssangyong 3-dong": "17:28",
+      "Cheonan-Asan Station": "17:38",
+      "Asan Campus": "17:53"
+    },
+    {
+      "Cheonan Campus": "17:15",
+      "Cheonan Terminal": "17:23",
+      "Cheonan Station": "17:28",
+      "Chungmu Hospital": "17:33",
+      "Ssangyong 3-dong": "17:38",
+      "Cheonan-Asan Station": "17:48",
+      "Asan Campus": "18:03"
+    },
+    {
+      "Cheonan Campus": "17:30",
+      "Cheonan Terminal": "17:38",
+      "Cheonan Station": "17:43",
+      "Chungmu Hospital": "17:48",
+      "Ssangyong 3-dong": "17:53",
+      "Cheonan-Asan Station": "18:03",
+      "Asan Campus": "18:18"
+    },
+    {
+      "Cheonan Campus": "17:45",
+      "Cheonan Terminal": "17:53",
+      "Cheonan Station": "17:58",
+      "Chungmu Hospital": "18:03",
+      "Ssangyong 3-dong": "18:08",
+      "Cheonan-Asan Station": "18:18",
+      "Asan Campus": "18:33"
+    },
+    {
+      "Cheonan Campus": "17:55",
+      "Cheonan Terminal": "18:03",
+      "Cheonan Station": "18:08",
+      "Chungmu Hospital": "18:13",
+      "Ssangyong 3-dong": "18:18",
+      "Cheonan-Asan Station": "18:28",
+      "Asan Campus": "18:43"
+    },
+    {
+      "Cheonan Campus": "18:05",
+      "Cheonan Terminal": "18:13",
+      "Cheonan Station": "18:18",
+      "Chungmu Hospital": "18:23",
+      "Ssangyong 3-dong": "18:28",
+      "Cheonan-Asan Station": "18:38",
+      "Asan Campus": "18:53"
+    },
+    {
+      "Cheonan Campus": "18:15",
+      "Cheonan Terminal": "18:23",
+      "Cheonan Station": "18:28",
+      "Chungmu Hospital": "18:33",
+      "Ssangyong 3-dong": "18:38",
+      "Cheonan-Asan Station": "18:48",
+      "Asan Campus": "19:03"
+    },
+    {
+      "Cheonan Campus": "18:30",
+      "Cheonan Terminal": "18:38",
+      "Cheonan Station": "18:43",
+      "Chungmu Hospital": "18:48",
+      "Ssangyong 3-dong": "18:53",
+      "Cheonan-Asan Station": "19:03",
+      "Asan Campus": "19:18"
+    },
+    {
+      "Cheonan Campus": "18:45",
+      "Cheonan Terminal": "18:53",
+      "Cheonan Station": "18:58",
+      "Chungmu Hospital": "19:03",
+      "Ssangyong 3-dong": "19:08",
+      "Cheonan-Asan Station": "19:18",
+      "Asan Campus": "19:33"
+    },
+    {
+      "Cheonan Campus": "19:00",
+      "Cheonan Terminal": "19:08",
+      "Cheonan Station": "19:13",
+      "Chungmu Hospital": "19:18",
+      "Ssangyong 3-dong": "19:23",
+      "Cheonan-Asan Station": "19:33",
+      "Asan Campus": "19:48"
+    },
+    {
+      "Cheonan Campus": "19:15",
+      "Cheonan Terminal": "19:23",
+      "Cheonan Station": "19:28",
+      "Chungmu Hospital": "19:33",
+      "Ssangyong 3-dong": "19:38",
+      "Cheonan-Asan Station": "19:48",
+      "Asan Campus": "20:03"
+    },
+    {
+      "Cheonan Campus": "19:30",
+      "Cheonan Terminal": "19:38",
+      "Cheonan Station": "19:43",
+      "Chungmu Hospital": "19:48",
+      "Ssangyong 3-dong": "19:53",
+      "Cheonan-Asan Station": "20:03",
+      "Asan Campus": "20:18"
+    },
+    {
+      "Cheonan Campus": "20:00",
+      "Cheonan Terminal": "20:08",
+      "Cheonan Station": "20:13",
+      "Chungmu Hospital": "20:18",
+      "Ssangyong 3-dong": "20:23",
+      "Cheonan-Asan Station": "20:33",
+      "Asan Campus": "20:48"
+    },
+    {
+      "Cheonan Campus": "20:30",
+      "Cheonan Terminal": "20:38",
+      "Cheonan Station": "20:43",
+      "Chungmu Hospital": "20:48",
+      "Ssangyong 3-dong": "20:53",
+      "Cheonan-Asan Station": "21:03",
+      "Asan Campus": "21:18"
+    },
+    {
+      "Cheonan Campus": "21:00",
+      "Cheonan Terminal": "21:08",
+      "Cheonan Station": "21:13",
+      "Chungmu Hospital": "21:18",
+      "Ssangyong 3-dong": "21:23",
+      "Cheonan-Asan Station": "21:33",
+      "Asan Campus": "21:48"
+    },
+    {
+      "Cheonan Campus": "21:30",
+      "Cheonan Terminal": "21:38",
+      "Cheonan Station": "21:43",
+      "Chungmu Hospital": "21:48",
+      "Ssangyong 3-dong": "21:53",
+      "Cheonan-Asan Station": "22:03",
+      "Asan Campus": "22:18"
+    }
+  ],
+  "asan_to_cheonan": [
+    {
+      "Asan Campus": "08:00",
+      "Cheonan-Asan Station": "08:13",
+      "Ssangyong 2-dong": "08:18",
+      "Chungmu Hospital": "08:23",
+      "Cheonan Station": "08:33",
+      "Cheonan Terminal": "08:38",
+      "Cheonan Campus": "08:48"
+    },
+    {
+      "Asan Campus": "08:10",
+      "Cheonan-Asan Station": "08:23",
+      "Ssangyong 2-dong": "08:28",
+      "Chungmu Hospital": "08:33",
+      "Cheonan Station": "08:43",
+      "Cheonan Terminal": "08:48",
+      "Cheonan Campus": "08:58"
+    },
+    {
+      "Asan Campus": "08:20",
+      "Cheonan-Asan Station": "08:33",
+      "Ssangyong 2-dong": "08:38",
+      "Chungmu Hospital": "08:43",
+      "Cheonan Station": "08:53",
+      "Cheonan Terminal": "08:58",
+      "Cheonan Campus": "09:08"
+    },
+    {
+      "Asan Campus": "08:30",
+      "Cheonan-Asan Station": "08:43",
+      "Ssangyong 2-dong": "08:48",
+      "Chungmu Hospital": "08:53",
+      "Cheonan Station": "09:03",
+      "Cheonan Terminal": "09:08",
+      "Cheonan Campus": "09:18"
+    },
+    {
+      "Asan Campus": "08:45",
+      "Cheonan-Asan Station": "08:58",
+      "Ssangyong 2-dong": "09:03",
+      "Chungmu Hospital": "09:08",
+      "Cheonan Station": "09:18",
+      "Cheonan Terminal": "09:23",
+      "Cheonan Campus": "09:33"
+    },
+    {
+      "Asan Campus": "09:00",
+      "Cheonan-Asan Station": "09:13",
+      "Ssangyong 2-dong": "09:18",
+      "Chungmu Hospital": "09:23",
+      "Cheonan Station": "09:33",
+      "Cheonan Terminal": "09:38",
+      "Cheonan Campus": "09:48"
+    },
+    {
+      "Asan Campus": "09:15",
+      "Cheonan-Asan Station": "09:28",
+      "Ssangyong 2-dong": "09:33",
+      "Chungmu Hospital": "09:38",
+      "Cheonan Station": "09:48",
+      "Cheonan Terminal": "09:53",
+      "Cheonan Campus": "10:03"
+    },
+    {
+      "Asan Campus": "09:30",
+      "Cheonan-Asan Station": "09:43",
+      "Ssangyong 2-dong": "09:48",
+      "Chungmu Hospital": "09:53",
+      "Cheonan Station": "10:03",
+      "Cheonan Terminal": "10:08",
+      "Cheonan Campus": "10:18"
+    },
+    {
+      "Asan Campus": "09:45",
+      "Cheonan-Asan Station": "09:58",
+      "Ssangyong 2-dong": "10:03",
+      "Chungmu Hospital": "10:08",
+      "Cheonan Station": "10:18",
+      "Cheonan Terminal": "10:23",
+      "Cheonan Campus": "10:33"
+    },
+    {
+      "Asan Campus": "10:00",
+      "Cheonan-Asan Station": "10:13",
+      "Ssangyong 2-dong": "10:18",
+      "Chungmu Hospital": "10:23",
+      "Cheonan Station": "10:33",
+      "Cheonan Terminal": "10:38",
+      "Cheonan Campus": "10:48"
+    },
+    {
+      "Asan Campus": "10:15",
+      "Cheonan-Asan Station": "10:28",
+      "Ssangyong 2-dong": "10:33",
+      "Chungmu Hospital": "10:38",
+      "Cheonan Station": "10:48",
+      "Cheonan Terminal": "10:53",
+      "Cheonan Campus": "11:03"
+    },
+    {
+      "Asan Campus": "10:30",
+      "Cheonan-Asan Station": "10:43",
+      "Ssangyong 2-dong": "10:48",
+      "Chungmu Hospital": "10:53",
+      "Cheonan Station": "11:03",
+      "Cheonan Terminal": "11:08",
+      "Cheonan Campus": "11:18"
+    },
+    {
+      "Asan Campus": "10:45",
+      "Cheonan-Asan Station": "10:58",
+      "Ssangyong 2-dong": "11:03",
+      "Chungmu Hospital": "11:08",
+      "Cheonan Station": "11:18",
+      "Cheonan Terminal": "11:23",
+      "Cheonan Campus": "11:33"
+    },
+    {
+      "Asan Campus": "11:00",
+      "Cheonan-Asan Station": "11:13",
+      "Ssangyong 2-dong": "11:18",
+      "Chungmu Hospital": "11:23",
+      "Cheonan Station": "11:33",
+      "Cheonan Terminal": "11:38",
+      "Cheonan Campus": "11:48"
+    },
+    {
+      "Asan Campus": "11:15",
+      "Cheonan-Asan Station": "11:28",
+      "Ssangyong 2-dong": "11:33",
+      "Chungmu Hospital": "11:38",
+      "Cheonan Station": "11:48",
+      "Cheonan Terminal": "11:53",
+      "Cheonan Campus": "12:03"
+    },
+    {
+      "Asan Campus": "11:30",
+      "Cheonan-Asan Station": "11:43",
+      "Ssangyong 2-dong": "11:48",
+      "Chungmu Hospital": "11:53",
+      "Cheonan Station": "12:03",
+      "Cheonan Terminal": "12:08",
+      "Cheonan Campus": "12:18"
+    },
+    {
+      "Asan Campus": "11:45",
+      "Cheonan-Asan Station": "11:58",
+      "Ssangyong 2-dong": "12:03",
+      "Chungmu Hospital": "12:08",
+      "Cheonan Station": "12:18",
+      "Cheonan Terminal": "12:23",
+      "Cheonan Campus": "12:33"
+    },
+    {
+      "Asan Campus": "12:00",
+      "Cheonan-Asan Station": "12:13",
+      "Ssangyong 2-dong": "12:18",
+      "Chungmu Hospital": "12:23",
+      "Cheonan Station": "12:33",
+      "Cheonan Terminal": "12:38",
+      "Cheonan Campus": "12:48"
+    },
+    {
+      "Asan Campus": "12:20",
+      "Cheonan-Asan Station": "12:33",
+      "Ssangyong 2-dong": "12:38",
+      "Chungmu Hospital": "12:43",
+      "Cheonan Station": "12:53",
+      "Cheonan Terminal": "12:58",
+      "Cheonan Campus": "13:08"
+    },
+    {
+      "Asan Campus": "12:40",
+      "Cheonan-Asan Station": "12:53",
+      "Ssangyong 2-dong": "12:58",
+      "Chungmu Hospital": "13:03",
+      "Cheonan Station": "13:13",
+      "Cheonan Terminal": "13:18",
+      "Cheonan Campus": "13:28"
+    },
+    {
+      "Asan Campus": "13:00",
+      "Cheonan-Asan Station": "13:13",
+      "Ssangyong 2-dong": "13:18",
+      "Chungmu Hospital": "13:23",
+      "Cheonan Station": "13:33",
+      "Cheonan Terminal": "13:38",
+      "Cheonan Campus": "13:48"
+    },
+    {
+      "Asan Campus": "13:20",
+      "Cheonan-Asan Station": "13:33",
+      "Ssangyong 2-dong": "13:38",
+      "Chungmu Hospital": "13:43",
+      "Cheonan Station": "13:53",
+      "Cheonan Terminal": "13:58",
+      "Cheonan Campus": "14:08"
+    },
+    {
+      "Asan Campus": "13:40",
+      "Cheonan-Asan Station": "13:53",
+      "Ssangyong 2-dong": "13:58",
+      "Chungmu Hospital": "14:03",
+      "Cheonan Station": "14:13",
+      "Cheonan Terminal": "14:18",
+      "Cheonan Campus": "14:28"
+    },
+    {
+      "Asan Campus": "14:00",
+      "Cheonan-Asan Station": "14:13",
+      "Ssangyong 2-dong": "14:18",
+      "Chungmu Hospital": "14:23",
+      "Cheonan Station": "14:33",
+      "Cheonan Terminal": "14:38",
+      "Cheonan Campus": "14:48"
+    },
+    {
+      "Asan Campus": "14:20",
+      "Cheonan-Asan Station": "14:33",
+      "Ssangyong 2-dong": "14:38",
+      "Chungmu Hospital": "14:43",
+      "Cheonan Station": "14:53",
+      "Cheonan Terminal": "14:58",
+      "Cheonan Campus": "15:08"
+    },
+    {
+      "Asan Campus": "14:40",
+      "Cheonan-Asan Station": "14:53",
+      "Ssangyong 2-dong": "14:58",
+      "Chungmu Hospital": "15:03",
+      "Cheonan Station": "15:13",
+      "Cheonan Terminal": "15:18",
+      "Cheonan Campus": "15:28"
+    },
+    {
+      "Asan Campus": "15:00",
+      "Cheonan-Asan Station": "15:13",
+      "Ssangyong 2-dong": "15:18",
+      "Chungmu Hospital": "15:23",
+      "Cheonan Station": "15:33",
+      "Cheonan Terminal": "15:38",
+      "Cheonan Campus": "15:48"
+    },
+    {
+      "Asan Campus": "15:15",
+      "Cheonan-Asan Station": "15:28",
+      "Ssangyong 2-dong": "15:33",
+      "Chungmu Hospital": "15:38",
+      "Cheonan Station": "15:48",
+      "Cheonan Terminal": "15:53",
+      "Cheonan Campus": "16:03"
+    },
+    {
+      "Asan Campus": "15:30",
+      "Cheonan-Asan Station": "15:43",
+      "Ssangyong 2-dong": "15:48",
+      "Chungmu Hospital": "15:53",
+      "Cheonan Station": "16:03",
+      "Cheonan Terminal": "16:08",
+      "Cheonan Campus": "16:18"
+    },
+    {
+      "Asan Campus": "15:45",
+      "Cheonan-Asan Station": "15:58",
+      "Ssangyong 2-dong": "16:03",
+      "Chungmu Hospital": "16:08",
+      "Cheonan Station": "16:18",
+      "Cheonan Terminal": "16:23",
+      "Cheonan Campus": "16:33"
+    },
+    {
+      "Asan Campus": "16:00",
+      "Cheonan-Asan Station": "16:13",
+      "Ssangyong 2-dong": "16:18",
+      "Chungmu Hospital": "16:23",
+      "Cheonan Station": "16:33",
+      "Cheonan Terminal": "16:38",
+      "Cheonan Campus": "16:48"
+    },
+    {
+      "Asan Campus": "16:15",
+      "Cheonan-Asan Station": "16:28",
+      "Ssangyong 2-dong": "16:33",
+      "Chungmu Hospital": "16:38",
+      "Cheonan Station": "16:48",
+      "Cheonan Terminal": "16:53",
+      "Cheonan Campus": "17:03"
+    },
+    {
+      "Asan Campus": "16:30",
+      "Cheonan-Asan Station": "16:43",
+      "Ssangyong 2-dong": "16:48",
+      "Chungmu Hospital": "16:53",
+      "Cheonan Station": "17:03",
+      "Cheonan Terminal": "17:08",
+      "Cheonan Campus": "17:18"
+    },
+    {
+      "Asan Campus": "16:45",
+      "Cheonan-Asan Station": "16:58",
+      "Ssangyong 2-dong": "17:03",
+      "Chungmu Hospital": "17:08",
+      "Cheonan Station": "17:18",
+      "Cheonan Terminal": "17:23",
+      "Cheonan Campus": "17:33"
+    },
+    {
+      "Asan Campus": "16:55",
+      "Cheonan-Asan Station": "17:08",
+      "Ssangyong 2-dong": "17:13",
+      "Chungmu Hospital": "17:18",
+      "Cheonan Station": "17:28",
+      "Cheonan Terminal": "17:33",
+      "Cheonan Campus": "17:43"
+    },
+    {
+      "Asan Campus": "17:05",
+      "Cheonan-Asan Station": "17:18",
+      "Ssangyong 2-dong": "17:23",
+      "Chungmu Hospital": "17:28",
+      "Cheonan Station": "17:38",
+      "Cheonan Terminal": "17:43",
+      "Cheonan Campus": "17:53"
+    },
+    {
+      "Asan Campus": "17:15",
+      "Cheonan-Asan Station": "17:28",
+      "Ssangyong 2-dong": "17:33",
+      "Chungmu Hospital": "17:38",
+      "Cheonan Station": "17:48",
+      "Cheonan Terminal": "17:53",
+      "Cheonan Campus": "18:03"
+    },
+    {
+      "Asan Campus": "17:30",
+      "Cheonan-Asan Station": "17:43",
+      "Ssangyong 2-dong": "17:48",
+      "Chungmu Hospital": "17:53",
+      "Cheonan Station": "18:03",
+      "Cheonan Terminal": "18:08",
+      "Cheonan Campus": "18:18"
+    },
+    {
+      "Asan Campus": "17:45",
+      "Cheonan-Asan Station": "17:58",
+      "Ssangyong 2-dong": "18:03",
+      "Chungmu Hospital": "18:08",
+      "Cheonan Station": "18:18",
+      "Cheonan Terminal": "18:23",
+      "Cheonan Campus": "18:33"
+    },
+    {
+      "Asan Campus": "17:55",
+      "Cheonan-Asan Station": "18:08",
+      "Ssangyong 2-dong": "18:13",
+      "Chungmu Hospital": "18:18",
+      "Cheonan Station": "18:28",
+      "Cheonan Terminal": "18:33",
+      "Cheonan Campus": "18:43"
+    },
+    {
+      "Asan Campus": "18:05",
+      "Cheonan-Asan Station": "18:18",
+      "Ssangyong 2-dong": "18:23",
+      "Chungmu Hospital": "18:28",
+      "Cheonan Station": "18:38",
+      "Cheonan Terminal": "18:43",
+      "Cheonan Campus": "18:53"
+    },
+    {
+      "Asan Campus": "18:15",
+      "Cheonan-Asan Station": "18:28",
+      "Ssangyong 2-dong": "18:33",
+      "Chungmu Hospital": "18:38",
+      "Cheonan Station": "18:48",
+      "Cheonan Terminal": "18:53",
+      "Cheonan Campus": "19:03"
+    },
+    {
+      "Asan Campus": "18:30",
+      "Cheonan-Asan Station": "18:43",
+      "Ssangyong 2-dong": "18:48",
+      "Chungmu Hospital": "18:53",
+      "Cheonan Station": "19:03",
+      "Cheonan Terminal": "19:08",
+      "Cheonan Campus": "19:18"
+    },
+    {
+      "Asan Campus": "18:45",
+      "Cheonan-Asan Station": "18:58",
+      "Ssangyong 2-dong": "19:03",
+      "Chungmu Hospital": "19:08",
+      "Cheonan Station": "19:18",
+      "Cheonan Terminal": "19:23",
+      "Cheonan Campus": "19:33"
+    },
+    {
+      "Asan Campus": "19:00",
+      "Cheonan-Asan Station": "19:13",
+      "Ssangyong 2-dong": "19:18",
+      "Chungmu Hospital": "19:23",
+      "Cheonan Station": "19:33",
+      "Cheonan Terminal": "19:38",
+      "Cheonan Campus": "19:48"
+    },
+    {
+      "Asan Campus": "19:15",
+      "Cheonan-Asan Station": "19:28",
+      "Ssangyong 2-dong": "19:33",
+      "Chungmu Hospital": "19:38",
+      "Cheonan Station": "19:48",
+      "Cheonan Terminal": "19:53",
+      "Cheonan Campus": "20:03"
+    },
+    {
+      "Asan Campus": "19:30",
+      "Cheonan-Asan Station": "19:43",
+      "Ssangyong 2-dong": "19:48",
+      "Chungmu Hospital": "19:53",
+      "Cheonan Station": "20:03",
+      "Cheonan Terminal": "20:08",
+      "Cheonan Campus": "20:18"
+    },
+    {
+      "Asan Campus": "20:00",
+      "Cheonan-Asan Station": "20:13",
+      "Ssangyong 2-dong": "20:18",
+      "Chungmu Hospital": "20:23",
+      "Cheonan Station": "20:33",
+      "Cheonan Terminal": "20:38",
+      "Cheonan Campus": "20:48"
+    },
+    {
+      "Asan Campus": "20:30",
+      "Cheonan-Asan Station": "20:43",
+      "Ssangyong 2-dong": "20:48",
+      "Chungmu Hospital": "20:53",
+      "Cheonan Station": "21:03",
+      "Cheonan Terminal": "21:08",
+      "Cheonan Campus": "21:18"
+    },
+    {
+      "Asan Campus": "21:00",
+      "Cheonan-Asan Station": "21:13",
+      "Ssangyong 2-dong": "21:18",
+      "Chungmu Hospital": "21:23",
+      "Cheonan Station": "21:33",
+      "Cheonan Terminal": "21:38",
+      "Cheonan Campus": "21:48"
+    },
+    {
+      "Asan Campus": "21:30",
+      "Cheonan-Asan Station": "21:43",
+      "Ssangyong 2-dong": "21:48",
+      "Chungmu Hospital": "21:53",
+      "Cheonan Station": "22:03",
+      "Cheonan Terminal": "22:08",
+      "Cheonan Campus": "22:18"
+    }
+  ]
+}
