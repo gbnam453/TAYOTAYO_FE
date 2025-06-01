@@ -1,4 +1,4 @@
-//정류장 주소
+//정류장 주소 Map
 final Map<String, String> addressAtoC = {
   "Asan Campus": "충청남도 아산시 배방읍 호서로79번길 20 호서대학교",
   "Cheonan-Asan Station": "충청남도 아산시 배방읍 장재리 316-7",
@@ -19,6 +19,7 @@ final Map<String, String> addressCtoA = {
   "Cheonan Campus": "충남 천안시 동남구 호서대길 12 호서대학교천안캠퍼스"
 };
 
+// 방향에 따른 정류장 주소 Map 정하기
 String? getAddress(String str, int dir) {
   if(dir == 0){
     return addressAtoC[str];
@@ -34,6 +35,7 @@ class busSchedule {
 
   busSchedule(this.stops);
 
+// JSON 데이터를 Map 형태로 변환하여 스케쥴 객체 생성
   factory busSchedule.fromJson(Map<String, dynamic> json) {
     return busSchedule(Map<String, String>.from(json));
   }
@@ -51,6 +53,7 @@ class busScheduleDB {
 
   busScheduleDB({required this.cheonanToAsan, required this.asanToCheonan});
 
+  // 받아온 시간표를 기반으로 JSON 데이터를 Map 형태로 변환하여 스케쥴 객체 생성
   factory busScheduleDB.fromJson(Map<String, dynamic> json) {
     return busScheduleDB(
       cheonanToAsan: List<Map<String, dynamic>>.from(json['cheonan_to_asan'])

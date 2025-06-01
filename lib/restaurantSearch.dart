@@ -22,6 +22,7 @@ class _RestaurantSearchPageState extends State<RestaurantSearchPage> {
     super.initState();
     _fetchRestaurants();
   }
+
   Future<void> _fetchRestaurants() async {
     try {
       // 1. 위치 권한 요청

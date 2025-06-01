@@ -47,10 +47,10 @@ class _ResultPageState extends State<ResultPage> {
     var startStop = widget.departureName;
     var destNum = widget.arrivalIndex;
     var destStop = widget.arrivalName;
-    print(startNum);
-    print(startStop);
-    print(destNum);
-    print(destStop);
+    // print(startNum);
+    // print(startStop);
+    // print(destNum);
+    // print(destStop);
 
     loadShuttleSchedule().then((db) async {
       final int dir = startNum < destNum ? 0 : 1;
@@ -67,7 +67,7 @@ class _ResultPageState extends State<ResultPage> {
       Coordinates startXY = await getLocation(address: getAddress(startStop, dir));
       Coordinates destXY = await getLocation(address: getAddress(destStop, dir));
 
-      final busTime = await getArriveDest(dir: dir, startNum : startNum, destNum: destNum, start: startXY, dest: destXY);
+      final busTime = await getArriveDest(startNum : startNum, destNum: destNum, start: startXY, dest: destXY);
       print("busTime$busTime");
 
       DateFormat format = DateFormat.Hm();

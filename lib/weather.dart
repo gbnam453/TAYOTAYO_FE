@@ -3,7 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:logger/logger.dart';
-import 'weather_icon.dart'; // ← 날씨 상태별 아이콘 매핑 함수
+import 'weather_icon.dart';
 
 class WeatherWidget extends StatefulWidget {
   const WeatherWidget({super.key});
