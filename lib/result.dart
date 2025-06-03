@@ -44,15 +44,15 @@ class _ResultPageState extends State<ResultPage> {
     'Cheonan Campus': '천안캠퍼스',
   };
 
-  // 한글 역명 → 카카오지도 링크 매핑
+// 한글 역명 → 카카오지도 링크 매핑
   static const Map<String, String> _stationUrlMap = {
-    '아산캠퍼스': 'https://kko.kakao.com/61e0wlaR0B',
-    '천안아산역': 'https://kko.kakao.com/sOzl9IKTs4',
-    '쌍용2동': 'https://kko.kakao.com/SKTdC2oRDm',
-    '충무병원': 'https://kko.kakao.com/wcRiin_WCV',
-    '천안역': 'https://kko.kakao.com/UuK4gJfkeM',
-    '천안터미널': 'https://kko.kakao.com/8KPtXVjKAT',
-    '천안캠퍼스': 'https://kko.kakao.com/o-5m0LiiMJ',
+    '아산캠퍼스': 'https://map.kakao.com/link/map/호서대학교 아산캠퍼스,36.736388,127.0751324',
+    '천안아산역': 'https://map.kakao.com/link/map/천안아산역,36.794123,127.104567',
+    '쌍용2동': 'https://map.kakao.com/link/map/쌍용2동,36.793456,127.123789',
+    '충무병원': 'https://map.kakao.com/link/map/충무병원,36.801234,127.142345',
+    '천안역': 'https://map.kakao.com/link/map/천안역,36.815678,127.156789',
+    '천안터미널': 'https://map.kakao.com/link/map/천안터미널,36.819908,127.1565357',
+    '천안캠퍼스': 'https://map.kakao.com/link/map/호서대학교 천안캠퍼스,36.8279104,127.1833844',
   };
 
   String _toKorean(String eng) => _stationNameMap[eng] ?? eng;
