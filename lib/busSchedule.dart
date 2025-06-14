@@ -1,4 +1,4 @@
-//정류장 주소 Map
+//정류장 이름 : 정류장 주소 Map
 final Map<String, String> addressAtoC = {
   "Asan Campus": "충청남도 아산시 배방읍 호서로79번길 20 호서대학교",
   "Cheonan-Asan Station": "충청남도 아산시 배방읍 장재리 316-7",
@@ -29,7 +29,7 @@ String? getAddress(String str, int dir) {
   }
 }
 
-// 버스 스케줄 클래스
+// 버스 시간표 클래스
 class busSchedule {
   final Map<String, String> stops;
 
@@ -46,14 +46,14 @@ class busSchedule {
 
 }
 
-// 노선별 버스 스케쥴 디비
+// 노선별 버스 스케쥴 클래스
 class busScheduleDB {
   final List<busSchedule> cheonanToAsan;
   final List<busSchedule> asanToCheonan;
 
   busScheduleDB({required this.cheonanToAsan, required this.asanToCheonan});
 
-  // 받아온 시간표를 기반으로 JSON 데이터를 Map 형태로 변환하여 스케쥴 객체 생성
+  // 받아온 시간표를 기반으로 JSON 데이터를 시간표 형태로 변환하여 스케쥴 객체 생성
   factory busScheduleDB.fromJson(Map<String, dynamic> json) {
     return busScheduleDB(
       cheonanToAsan: List<Map<String, dynamic>>.from(json['cheonan_to_asan'])
@@ -73,6 +73,7 @@ class busScheduleDB {
   }
 }
 
+//방향에 따라서 스케쥴 getter
 List<busSchedule> getSchedules ({
   required busScheduleDB busSche,
   required int dir

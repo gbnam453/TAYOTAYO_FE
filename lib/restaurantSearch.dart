@@ -5,7 +5,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const KAKAO_API_KEY = '61b38d6ed4f530323a885956d6715767';
+const KAKAO_API_KEY = 'ff9b9f85150271eb272bcb6179dffa37';
 const NAVER_CLIENT_ID = 'pmT2ZpND_xq3RKu5mJsl';
 const NAVER_CLIENT_SECRET = 'EAN7GXvag4';
 
