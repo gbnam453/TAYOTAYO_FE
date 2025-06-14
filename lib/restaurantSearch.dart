@@ -5,6 +5,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+//API 키 변수
 const KAKAO_API_KEY = 'ff9b9f85150271eb272bcb6179dffa37';
 const NAVER_CLIENT_ID = 'pmT2ZpND_xq3RKu5mJsl';
 const NAVER_CLIENT_SECRET = 'EAN7GXvag4';
@@ -25,30 +26,30 @@ class _RestaurantSearchPageState extends State<RestaurantSearchPage> {
 
   Future<void> _fetchRestaurants() async {
     try {
-      // 1. 위치 권한 요청
+      //위치 권한 요청
       LocationPermission permission = await Geolocator.checkPermission();
       if (permission == LocationPermission.denied ||
           permission == LocationPermission.deniedForever) {
         permission = await Geolocator.requestPermission();
       }
 
-      // 2. 현재 위치 가져오기
+      //현재 위치 가져오기
       final position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
 
-      // 3. 좌표 → 주소 변환
+      //좌표 → 주소 변환
       final placemarks =
       await placemarkFromCoordinates(position.latitude, position.longitude);
 
       final placemark = placemarks.first;
       final dong = placemark.locality ?? placemark.subLocality ?? '맛집';
 
-      // 4. 검색 키워드 생성
+      //검색 키워드 생성
       final keyword = '$dong 맛집';
 
       print('🔍 현재 위치 검색 키워드: $keyword');
 
-      // 5. Kakao API 호출
+      //Kakao API 호출
       final url =
           'https://dapi.kakao.com/v2/local/search/keyword.json?query=${Uri.encodeComponent(keyword)}';
 
@@ -56,7 +57,7 @@ class _RestaurantSearchPageState extends State<RestaurantSearchPage> {
         Uri.parse(url),
         headers: {'Authorization': 'KakaoAK $KAKAO_API_KEY'},
       );
-
+      //성공 후 데이터 파ㅇ
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         final List docs = data['documents'];
@@ -80,7 +81,7 @@ class _RestaurantSearchPageState extends State<RestaurantSearchPage> {
       print('위치 기반 맛집 검색 실패: $e');
     }
   }
-
+  //네이버 api로 썸네일 받아오기
   Future<String?> _fetchNaverThumbnail(String query) async {
     final url =
         'https://openapi.naver.com/v1/search/image.json?query=${Uri.encodeComponent(query)}&display=1';
@@ -97,7 +98,7 @@ class _RestaurantSearchPageState extends State<RestaurantSearchPage> {
     }
     return null;
   }
-
+  //식당을 사진과 식당이름을 4개로 그리드뷰로 표현
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(

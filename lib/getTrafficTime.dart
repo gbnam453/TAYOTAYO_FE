@@ -101,7 +101,7 @@ Future getArriveDest({
       'X-NCP-APIGW-API-KEY': '$API_KEY',
     }),
   );
-
+  //통신 성공 후 파싱
   if (response.statusCode == 200) {
     final json = jsonDecode(response.toString());
 

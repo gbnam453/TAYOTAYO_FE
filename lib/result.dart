@@ -1,15 +1,14 @@
-// lib/result.dart
-
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';            // Material 위젯 사용
-import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
-import 'package:webview_flutter/webview_flutter.dart';  // ← 반드시 추가
+import 'package:flutter/material.dart';            // Material 위젯 사용 (Card 등)
+import 'package:flutter/services.dart';            // JSON 불러오기용
+import 'package:intl/intl.dart';                   // 시간 포맷팅
+import 'package:webview_flutter/webview_flutter.dart';  // 웹뷰 플러그인
 import 'busSchedule.dart';
 import 'calcTime.dart';
 import 'getTrafficTime.dart';
 
+/// 결과 페이지: 출발지~도착지까지의 다음 셔틀 시간, 예상 소요 시간, 도착 시간 출력
 class ResultPage extends StatefulWidget {
   final int departureIndex;
   final String departureName; // 영문
@@ -28,12 +27,12 @@ class ResultPage extends StatefulWidget {
 }
 
 class _ResultPageState extends State<ResultPage> {
-  String? _departureTime;
-  String? _travelDuration;
-  String? _arrivalTime;
-  bool _isLoading = true;
+  String? _departureTime;    // 다음 셔틀 출발 시간
+  String? _travelDuration;   // 소요 시간
+  String? _arrivalTime;      // 도착 예상 시간
+  bool _isLoading = true;    // 로딩 상태
 
-  // 영문 → 한글 매핑
+  // 영문 → 한글 정류장 이름 매핑
   static const Map<String, String> _stationNameMap = {
     'Asan Campus': '아산캠퍼스',
     'Cheonan-Asan Station': '천안아산역',
@@ -44,7 +43,7 @@ class _ResultPageState extends State<ResultPage> {
     'Cheonan Campus': '천안캠퍼스',
   };
 
-// 한글 역명 → 카카오지도 링크 매핑
+  // 한글 역명 → 카카오 지도 링크
   static const Map<String, String> _stationUrlMap = {
     '아산캠퍼스': 'https://map.kakao.com/link/map/호서대학교 아산캠퍼스,36.736388,127.0751324',
     '천안아산역': 'https://map.kakao.com/link/map/천안아산역,36.794123,127.104567',
@@ -55,21 +54,24 @@ class _ResultPageState extends State<ResultPage> {
     '천안캠퍼스': 'https://map.kakao.com/link/map/호서대학교 천안캠퍼스,36.8279104,127.1833844',
   };
 
+  // 영어 정류장명을 한글로 변환
   String _toKorean(String eng) => _stationNameMap[eng] ?? eng;
 
   @override
   void initState() {
     super.initState();
-    _loadAndComputeTimes();
+    _loadAndComputeTimes(); // 초기 데이터 불러오기
   }
 
+  /// JSON 파일에서 셔틀 시간표 로드
   Future<busScheduleDB> _loadShuttleSchedule() async {
     final jsonStr =
-    await rootBundle.loadString('assets/ShuttleScheduleDB.json');
+        await rootBundle.loadString('assets/ShuttleScheduleDB.json');
     final jsonMap = jsonDecode(jsonStr);
     return busScheduleDB.fromJson(jsonMap);
   }
 
+  /// 출발/도착 정류장과 시간계산 함수
   void _loadAndComputeTimes() async {
     final db = await _loadShuttleSchedule();
     int startNum = widget.departureIndex;
@@ -78,21 +80,23 @@ class _ResultPageState extends State<ResultPage> {
     String destStop = widget.arrivalName;
     final int dir = (startNum < destNum) ? 0 : 1;
 
+    // 다음 셔틀 출발 시간 계산
     String arriveTimeString;
     if (startNum == 0 || startNum == 6) {
       arriveTimeString = getNextBusTime(
-        stopName: startStop,
-        schedules: getSchedules(dir: dir, busSche: db),
-      ) ??
+            stopName: startStop,
+            schedules: getSchedules(dir: dir, busSche: db),
+          ) ??
           "00:00";
     } else {
       arriveTimeString = (await getNextTime(
-        stopName: startStop,
-        schedules: getSchedules(dir: dir, busSche: db),
-      )) ??
+            stopName: startStop,
+            schedules: getSchedules(dir: dir, busSche: db),
+          )) ??
           "00:00";
     }
 
+    // 실제 위치 기반 도착 시간 계산
     Coordinates startXY = await getLocation(address: getAddress(startStop, dir));
     Coordinates destXY = await getLocation(address: getAddress(destStop, dir));
     double busTravelTime = await getArriveDest(
@@ -102,10 +106,11 @@ class _ResultPageState extends State<ResultPage> {
       dest: destXY,
     );
 
+    // 도착 시간 계산
     DateFormat format = DateFormat.Hm();
     DateTime parsedDeparture = format.parse(arriveTimeString);
     DateTime computedArrival =
-    parsedDeparture.add(Duration(minutes: busTravelTime.round()));
+        parsedDeparture.add(Duration(minutes: busTravelTime.round()));
     String finalArrivalString = DateFormat.Hm().format(computedArrival);
 
     setState(() {
@@ -116,6 +121,7 @@ class _ResultPageState extends State<ResultPage> {
     });
   }
 
+  /// 카카오 지도 웹뷰 열기
   void _openWebView(String url) {
     Navigator.of(context).push(
       CupertinoPageRoute(
@@ -145,14 +151,15 @@ class _ResultPageState extends State<ResultPage> {
     );
   }
 
+  /// 결과 화면 구성
   Widget _buildContent(BuildContext context) {
     final String departureKorean = _toKorean(widget.departureName);
-    final String arrivalKorean   = _toKorean(widget.arrivalName);
+    final String arrivalKorean = _toKorean(widget.arrivalName);
 
     return SingleChildScrollView(
       child: Column(
         children: [
-          // 상단 일러스트
+          // 일러스트 이미지
           Image.network(
             'https://img.freepik.com/free-vector/city-bus-concept-illustration_114360-11574.jpg?semt=ais_hybrid&w=740',
             fit: BoxFit.fitWidth,
@@ -161,14 +168,14 @@ class _ResultPageState extends State<ResultPage> {
 
           SizedBox(height: 24),
 
-          // 점선 배경 + 카드 배치
+          // 시간 정보 출력 카드 + 점선 배경
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Stack(
               children: [
+                // 점선 배경
                 Positioned.fill(
                   child: Padding(
-                    // top:68 으로 두어 점선이 출발 카드 뒤에 가려짐
                     padding: const EdgeInsets.only(left: 40, top: 68),
                     child: CustomPaint(
                       painter: _VerticalDashedLinePainter(),
@@ -176,10 +183,10 @@ class _ResultPageState extends State<ResultPage> {
                   ),
                 ),
 
+                // 출발지~도착지 카드 및 시간
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // 출발지 카드: 터치 시 WebView 열기
                     GestureDetector(
                       onTap: () {
                         final url = _stationUrlMap[departureKorean];
@@ -193,12 +200,9 @@ class _ResultPageState extends State<ResultPage> {
                       ),
                     ),
                     SizedBox(height: 12),
-
-                    // 이동 소요시간: 점선 바로 오른쪽
                     Row(
                       children: [
-                        SizedBox(width: 40),
-                        SizedBox(width: 16),
+                        SizedBox(width: 56), // 점선 오른쪽에 배치
                         Text(
                           _travelDuration ?? '',
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -206,8 +210,6 @@ class _ResultPageState extends State<ResultPage> {
                       ],
                     ),
                     SizedBox(height: 12),
-
-                    // 도착지 카드: 터치 시 WebView 열기
                     GestureDetector(
                       onTap: () {
                         final url = _stationUrlMap[arrivalKorean];
@@ -233,7 +235,7 @@ class _ResultPageState extends State<ResultPage> {
   }
 }
 
-/// 출발지/도착지 카드 위젯
+/// 출발지/도착지 카드 UI
 class _StepCard extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
@@ -251,11 +253,8 @@ class _StepCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
-        // 카드 높이를 약 68px로 설정 (vertical:20 + icon 28 + margin)
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
         child: Row(
           children: [
@@ -279,7 +278,7 @@ class _StepCard extends StatelessWidget {
   }
 }
 
-/// 점선을 그리는 CustomPainter
+/// 점선 라인 그리기용 커스텀 페인터
 class _VerticalDashedLinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -288,12 +287,13 @@ class _VerticalDashedLinePainter extends CustomPainter {
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke;
 
-    final double dx = 0.0; // 이미 Padding으로 40px을 띄워 두었으므로, 0.0에서 중앙 그리기
+    final double dx = 0.0;
     double startY = 0;
     final dashHeight = 6.0;
     final dashSpace = 6.0;
     final totalHeight = size.height;
 
+    // 점선을 일정 간격으로 그림
     while (startY < totalHeight) {
       double segmentHeight = (startY + dashHeight > totalHeight)
           ? (totalHeight - startY)
@@ -308,13 +308,10 @@ class _VerticalDashedLinePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _VerticalDashedLinePainter oldDelegate) =>
-      false;
+  bool shouldRepaint(covariant _VerticalDashedLinePainter oldDelegate) => false;
 }
 
-
 /// 웹뷰 페이지
-/// 웹뷰 페이지 (webview_flutter 4.x 버전용)
 class WebViewPage extends StatefulWidget {
   final String initialUrl;
 
@@ -331,7 +328,6 @@ class _WebViewPageState extends State<WebViewPage> {
   @override
   void initState() {
     super.initState();
-    // 4.x 기준으로 WebViewController를 생성해 주고, 로드할 URL을 지정해야 합니다.
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(Uri.parse(widget.initialUrl));
@@ -347,7 +343,6 @@ class _WebViewPageState extends State<WebViewPage> {
       child: SafeArea(
         child: Stack(
           children: [
-            // WebViewWidget(controller: …) 형태로 화면에 뿌려줍니다.
             WebViewWidget(controller: _controller),
             if (_isLoadingPage)
               Center(child: CupertinoActivityIndicator(radius: 20)),

@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import 'result.dart';
+import 'result.dart'; // 검색 결과 페이지 import
 
+// 버스 정류장 선택 페이지
 class BusStopPage extends StatefulWidget {
   @override
   _BusStopPageState createState() => _BusStopPageState();
 }
 
 class _BusStopPageState extends State<BusStopPage> {
+  //위치 목록
   final List<String> locationsKr = [
     '아산캠퍼스',
     '천안아산역',
@@ -17,6 +19,7 @@ class _BusStopPageState extends State<BusStopPage> {
     '천안캠퍼스',
   ];
 
+  //목록
   final List<String> locationsEn = [
     'Asan Campus',
     'Cheonan-Asan Station',
@@ -27,9 +30,11 @@ class _BusStopPageState extends State<BusStopPage> {
     'Cheonan Campus',
   ];
 
+  // 현재 선택된 출발지와 도착지 인덱스
   int departureIndex = 0;
   int arrivalIndex = 1;
 
+  // 위치 선택 표시하는 함수
   void _showPicker({
     required int initialIndex,
     required Function(int) onSelected,
@@ -41,6 +46,7 @@ class _BusStopPageState extends State<BusStopPage> {
         color: CupertinoColors.systemBackground.resolveFrom(context),
         child: Column(
           children: [
+            // 완료 버튼
             Container(
               height: 40,
               alignment: Alignment.centerRight,
@@ -51,12 +57,12 @@ class _BusStopPageState extends State<BusStopPage> {
                 onPressed: () => Navigator.pop(context),
               ),
             ),
+            // 위치 목록을 보여줌
             Expanded(
               child: CupertinoPicker(
-                scrollController:
-                FixedExtentScrollController(initialItem: initialIndex),
+                scrollController: FixedExtentScrollController(initialItem: initialIndex),
                 itemExtent: 40.0,
-                onSelectedItemChanged: onSelected,
+                onSelectedItemChanged: onSelected, // 선택 시 실행할 콜백
                 children: locationsKr
                     .map((loc) => Text(
                   loc,
@@ -74,12 +80,13 @@ class _BusStopPageState extends State<BusStopPage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      // 상단 네비게이션 바
       navigationBar: CupertinoNavigationBar(
         backgroundColor: CupertinoColors.white,
-        middle: Text('출발지 / 도착지 선택'),
+        middle: Text('출발지 / 도착지 선택'), // 타이틀 텍스트
         leading: CupertinoNavigationBarBackButton(
           color: CupertinoColors.activeBlue,
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context), // 뒤로 가기 버튼
         ),
       ),
       backgroundColor: CupertinoColors.systemGroupedBackground,
@@ -91,6 +98,7 @@ class _BusStopPageState extends State<BusStopPage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                // 출발지, 도착지
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -103,9 +111,11 @@ class _BusStopPageState extends State<BusStopPage> {
                 ),
                 SizedBox(height: 20),
 
+                // 출발지/도착지 선택 버튼
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // 출발지 버튼
                     _buildLocationButton(
                       title: locationsKr[departureIndex],
                       onPressed: () {
@@ -120,6 +130,7 @@ class _BusStopPageState extends State<BusStopPage> {
                       },
                     ),
                     SizedBox(width: 40),
+                    // 도착지 버튼
                     _buildLocationButton(
                       title: locationsKr[arrivalIndex],
                       onPressed: () {
@@ -137,6 +148,7 @@ class _BusStopPageState extends State<BusStopPage> {
                 ),
                 SizedBox(height: 40),
 
+                // 검색 버튼
                 SizedBox(
                   width: 200,
                   child: CupertinoButton(
@@ -147,6 +159,7 @@ class _BusStopPageState extends State<BusStopPage> {
                             color: CupertinoColors.black, fontSize: 20)),
                     onPressed: () {
                       if (departureIndex == arrivalIndex) {
+                        // 출발지와 도착지가 같은 경우 경고창 표시
                         showCupertinoDialog(
                           context: context,
                           builder: (_) => CupertinoAlertDialog(
@@ -161,6 +174,7 @@ class _BusStopPageState extends State<BusStopPage> {
                           ),
                         );
                       } else {
+                        // 검색 결과 페이지로 이동
                         Navigator.push(
                           context,
                           CupertinoPageRoute(
@@ -184,6 +198,7 @@ class _BusStopPageState extends State<BusStopPage> {
     );
   }
 
+  // 위치 선택 버튼
   Widget _buildLocationButton({
     required String title,
     required VoidCallback onPressed,
